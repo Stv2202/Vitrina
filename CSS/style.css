@@ -1,99 +1,23 @@
 body{
+    text-align: center;
     margin: 0;
     padding: 0;
     background-color: white;
     background-image: url(/imagenes/Tienda-de-Artesanias-Colombia-1-1024x682.jpg);
-  background-size: cover;       /* Hace que la imagen cubra toda la pantalla */
-  background-repeat: no-repeat; /* Evita que se repita */
-  background-position: center;  /* Centra la imagen */
+    background-size: cover;       /* Hace que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: center;  /* Centra la imagen */
     
 }
-
-.contener main {
-    align-items: flex-start;
-    display: flex;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100dvh;
-}
-
-
-.form form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-
-.form form #mensaje {
-    height: 50px;
-}
-
-.form form input {
-    padding: 7px;
-    border-radius: 15px;
-    border: 0.1rem solid black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.22);
-}
-
-.form button {
-    padding: 7px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-    background-color: rgb(80, 135, 255);
-    border-radius: 15px;
-    border: none;
-}
-
-.form button:hover {
-    background-color: blue;
-    cursor: pointer;
-}
-.gallery img {
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.item {
-    margin: 10px;
-    border-radius: 15px;
-    padding: 10px 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.22);
-    transition: transfrorm 0.3s, box-shadow 0.3s;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-}
-
-.item:hover {
-    transform: scale(1.06);
-}
-
-.efecto1 img:hover  {
-    filter: blur(2px);
-
-}
-
-
 .nav-bar{
-    
     display: flex;
     gap: 100px;
     border: 2px solid black;
     background-color: black;
     padding: 20px;
     justify-content: center;
-    
-
-
 }
 .item{
-    
     color: white;
     text-decoration: none;
     padding: 5px 10px;
@@ -102,4 +26,84 @@ body{
 }
 .item:hover{
     background-color: violet;
+}
+main{
+    display: flex;                          /* Coloca los hijos del <main> (galería y formulario) uno al lado del otro (en fila). */
+    justify-content: space-around;         /* Deja espacio entre los elementos y también a los lados para que no estén pegados. */
+    align-items: flex-start;               /* Alinea los elementos al inicio del eje vertical (arriba del todo). */
+    padding: 40px;                          /* Agrega espacio interno alrededor del contenido del <main>. */
+    gap: 40px;                              /* Deja un espacio de 40px entre la galería y el formulario. */
+    flex-wrap: wrap;                        /* Permite que los elementos bajen si la pantalla es pequeña (responsive). */
+}
+.gallery{
+    flex: 2; 
+
+}
+.grid {
+    display: grid;                          /* Usa sistema de cuadrícula para alinear las imágenes. */
+    grid-template-columns: repeat(4, 1fr);  /* Crea 3 columnas de igual tamaño (1fr = una fracción del espacio disponible). */
+    gap: 40px;                              /* Espacio entre las imágenes. */
+    justify-items: center;                 /* Centra cada celda de la cuadrícula horizontalmente. */
+}
+.grid img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* aspecto de la imagen */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 50px;
+}
+.grid img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgb(7, 49, 235);
+
+}
+.formulario {
+    flex: 1;                                /* Igual que la galería, ocupa una porción igual del contenedor. */
+    background-color: #ffffff30;            /* Fondo blanco transparente (30 = 30% de opacidad en hexadecimal). */
+    padding: 20px;                          /* Espacio interior (relleno) dentro del formulario. */
+    border-radius: 10px;                    /* Bordes redondeados. */
+    color: black;                           /* Texto en color negro. */
+}
+.campo {
+    margin-bottom: 20px;                    /* Deja espacio debajo de cada campo de entrada (input). */
+    text-align: left;                       /* Alinea el texto (etiquetas) a la izquierda. */
+}
+
+input, button {
+    width: 100%;                            /* El ancho ocupa todo el contenedor padre. */
+    padding: 8px;                           /* Espacio interno dentro del input o botón. */
+    border: none;                           /* Sin borde. */
+    border-radius: 8px;                     /* Bordes ligeramente redondeados. */
+}
+button {
+    background-color: #007bff;              /* Azul brillante como fondo del botón. */
+    color: white;                           /* Texto blanco. */
+    cursor: pointer;                        /* Cambia el cursor a una mano al pasar por encima. */
+}
+button:hover{
+    background-color: #c1c2c3;
+}
+#titulo-contacto{
+
+    display: inline-block;
+    border-radius: 100px;
+}
+#titulo-galeria{
+    
+    color: black;
+    display: inline-block;
+    border-radius: 100px;
+}
+.cont_img{
+    padding: 10px;
+    background-color: gray;
+}
+
+.efecto img{
+    filter: blur(2px);
+}
+
+.efecto img:hover{
+    filter: brightness(1);
+    transform: scale(1.1);
 }
